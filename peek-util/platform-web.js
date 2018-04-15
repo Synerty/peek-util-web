@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Platform_1 = require("./Platform");
+var peek_util_1 = require("@synerty/peek-util");
 var Platform = /** @class */ (function () {
     function Platform() {
     }
@@ -11,9 +11,9 @@ var Platform = /** @class */ (function () {
         return true;
     };
     Platform.deviceSize = function () {
-        return Platform_1.DeviceSizeE.default;
+        return peek_util_1.DeviceSizeE.default;
     };
     return Platform;
 }());
 exports.Platform = Platform;
-//# sourceMappingURL=/Users/jchesney/project/peek-util/peek-util/platform/PlatformWeb.js.map
+//# sourceMappingURL=/Users/jchesney/project/peek-util-web/peek-util/platform-web.js.map

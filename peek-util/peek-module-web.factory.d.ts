@@ -1,6 +1,6 @@
 import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
-import { Sound } from "./Sound";
+import { Sound } from "@synerty/peek-util";
 export declare class WebSound implements Sound {
     private audio;
     constructor(soundFilePath: string);

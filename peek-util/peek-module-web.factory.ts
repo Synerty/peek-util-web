@@ -2,7 +2,7 @@ import {FormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
 
 import {AngularFontAwesomeModule} from "angular-font-awesome/dist/angular-font-awesome";
-import {Sound} from "./Sound";
+import {Sound} from "@synerty/peek-util";
 
 export class WebSound implements Sound {
   private audio: any;

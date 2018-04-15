@@ -1,4 +1,4 @@
-import {DeviceSizeE, PlatformI} from './Platform';
+import {DeviceSizeE, PlatformI} from '@synerty/peek-util';
 
 export class Platform implements PlatformI {
   static isNativeScript(): boolean {
