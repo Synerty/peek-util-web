@@ -1,0 +1,18 @@
+# The angular view / component compiler needs the definitions in the .TS files here
+# *.ts
+# !*.d.ts
+
+references.d.ts
+test-web
+test-ns
+node_modules
+hooks
+package-lock.json
+tslint.json
+.editorconfig
+.idea
+.vscode
+.gitignore
+tsconfig.json
+
+publish.sh
