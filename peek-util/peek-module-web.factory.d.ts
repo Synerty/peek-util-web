@@ -1,5 +1,5 @@
-import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
+import { AngularFontAwesomeModule } from "angular-font-awesome/dist/angular-font-awesome";
 import { Sound } from "@synerty/peek-util";
 export declare class WebSound implements Sound {
     private audio;
@@ -10,7 +10,7 @@ export declare class PeekModuleFactory {
     /**
      * Provide a cross platform Browser module
      */
-    static readonly FormsModules: (typeof FormsModule)[];
+    static readonly FormsModules: (typeof AngularFontAwesomeModule)[];
     /**
      * Provide a cross platform Router module
      */
