@@ -13,7 +13,11 @@ export class WebSound implements Sound {
 
   play(): Promise<void> {
     return new Promise<void>((resolve, reject) => {
-      this.audio.play();
+      try {
+        this.audio.play();
+      } catch (e) {
+        reject(e.toString());
+      }
       resolve();
     });
   }

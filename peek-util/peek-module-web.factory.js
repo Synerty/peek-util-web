@@ -10,7 +10,12 @@ var WebSound = /** @class */ (function () {
     WebSound.prototype.play = function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
-            _this.audio.play();
+            try {
+                _this.audio.play();
+            }
+            catch (e) {
+                reject(e.toString());
+            }
             resolve();
         });
     };
