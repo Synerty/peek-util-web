@@ -14,7 +14,12 @@ export class WebSound implements Sound {
   play(): Promise<void> {
     return new Promise<void>((resolve, reject) => {
       try {
-        this.audio.play();
+        const optionalPromise = this.audio.play();
+        if (optionalPromise != null) {
+          optionalPromise.then(resolve);
+          optionalPromise.catch(reject);
+          return;
+        }
       } catch (e) {
         reject(e.toString());
       }

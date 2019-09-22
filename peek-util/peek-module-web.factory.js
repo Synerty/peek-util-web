@@ -11,7 +11,12 @@ var WebSound = /** @class */ (function () {
         var _this = this;
         return new Promise(function (resolve, reject) {
             try {
-                _this.audio.play();
+                var optionalPromise = _this.audio.play();
+                if (optionalPromise != null) {
+                    optionalPromise.then(resolve);
+                    optionalPromise.catch(reject);
+                    return;
+                }
             }
             catch (e) {
                 reject(e.toString());
