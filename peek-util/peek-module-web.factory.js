@@ -8,21 +8,15 @@ var WebSound = /** @class */ (function () {
         this.audio = new Audio(soundFilePath);
     }
     WebSound.prototype.play = function () {
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            try {
-                var optionalPromise = _this.audio.play();
-                if (optionalPromise != null) {
-                    optionalPromise.then(resolve);
-                    optionalPromise.catch(reject);
-                    return;
-                }
-            }
-            catch (e) {
-                reject(e.toString());
-            }
-            resolve();
-        });
+        try {
+            var optionalPromise = this.audio.play();
+            if (optionalPromise != null)
+                return optionalPromise;
+        }
+        catch (e) {
+            return Promise.reject(e.toString());
+        }
+        return Promise.resolve();
     };
     return WebSound;
 }());

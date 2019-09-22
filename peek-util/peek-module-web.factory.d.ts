@@ -1,6 +1,6 @@
-import { RouterModule } from "@angular/router";
-import { AngularFontAwesomeModule } from "angular-font-awesome/dist/angular-font-awesome";
-import { Sound } from "@synerty/peek-util";
+import { RouterModule } from '@angular/router';
+import { AngularFontAwesomeModule } from 'angular-font-awesome/dist/angular-font-awesome';
+import { Sound } from '@synerty/peek-util';
 export declare class WebSound implements Sound {
     private audio;
     constructor(soundFilePath: string);

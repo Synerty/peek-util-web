@@ -1,8 +1,8 @@
-import {FormsModule} from "@angular/forms";
-import {RouterModule} from "@angular/router";
+import {FormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
 
-import {AngularFontAwesomeModule} from "angular-font-awesome/dist/angular-font-awesome";
-import {Sound} from "@synerty/peek-util";
+import {AngularFontAwesomeModule} from 'angular-font-awesome/dist/angular-font-awesome';
+import {Sound} from '@synerty/peek-util';
 
 export class WebSound implements Sound {
   private audio: any;
@@ -12,21 +12,16 @@ export class WebSound implements Sound {
   }
 
   play(): Promise<void> {
-    return new Promise<void>((resolve, reject) => {
-      try {
-        const optionalPromise = this.audio.play();
-        if (optionalPromise != null) {
-          optionalPromise.then(resolve);
-          optionalPromise.catch(reject);
-          return;
-        }
-      } catch (e) {
-        reject(e.toString());
-      }
-      resolve();
-    });
-  }
+    try {
+      const optionalPromise = this.audio.play();
+      if (optionalPromise != null)
+        return optionalPromise;
 
+    } catch (e) {
+      return Promise.reject(e.toString());
+    }
+    return Promise.resolve();
+  }
 
 }
 
